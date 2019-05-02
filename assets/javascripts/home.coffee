@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-	console.log("ready")
+
 	$(".btn-green").click ->
 		console.log("green")
 		location.href = "./conquest/income"

@@ -7,7 +7,7 @@
 		<div class="conquest-content row">
 			<div class="conquest-video col-lg-9 col-md-6 col-sm-12">
 				<div>
-					<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"></iframe>
+					<%= video_tag("#{@test_name}"+"#{(@cur_part+1)}"+".mp4",controls: true, autobuffer: true,autoplay:true) %>
 				</div>
 			</div>
 			<div class="conquest-part-check col-lg-3 col-md-6 col-sm-12">
@@ -39,13 +39,16 @@
 		</div>
 		<div class="conquest-content row">
 			<div class="conquest-img col-lg-3 col-sm-12">
-				<% if @exp_point<3 %>
-					<%= image_tag "ninja.png" , :class => "conquest-img-ninja" %>
-				<% elsif @exp_point>=3 and @exp_point<6 %>
-					<%= image_tag "ninja2.png" , :class => "conquest-img-ninja" %>
-				<% elsif @exp_point>=6 %>
-					<%= image_tag "ninja3.png" , :class => "conquest-img-ninja" %>
-				<% end %>
+				<%= image_tag "dollar.gif" , :class => "conquest-img-dollar" %>
+				<div class="conquest-level-img">
+					<% if @exp_point<3 %>
+						<%= image_tag @test_name+"0.png" , :class => "conquest-img-ninja" %>
+					<% elsif @exp_point>=3 and @exp_point<6 %>
+						<%= image_tag @test_name+"1.png" , :class => "conquest-img-ninja" %>
+					<% elsif @exp_point>=6 %>
+						<%= image_tag @test_name+"2.png" , :class => "conquest-img-ninja" %>
+					<% end %>
+				</div>
 			</div>
 			<div class="conquest-question col-lg-9 col-sm-12">
 				<p id="question"><%= @cur_ques+1 %>. <%= @data[@cur_part * 3 + @cur_ques].question %></p>
@@ -76,7 +79,7 @@
 
 <script type="text/javascript">
 	
-	var cur_select,cur_part,cur_ques,exp_point,point1,point2,point3,data,test_name;
+	var cur_select,cur_part,cur_ques,exp_point,point1,point2,point3,data,test_name, cur_level;
 	
 	$(document).ready(function(){
 		
@@ -88,6 +91,7 @@
 		cur_part = <%= @cur_part %>;
 		cur_ques = <%= @cur_ques %>;
 		exp_point = <%= @exp_point %>;
+		cur_level = <%= @exp_point/3 %>;
 		point1 = <%= @point1 %>;
 		point2 = <%= @point2 %>;
 		point3 = <%= @point3 %>;
@@ -118,6 +122,12 @@
 		cur_ques++;
 		if(cur_ques == 3){
 			cur_part ++;
+			if(cur_part==0)
+				$(".conquest-video div").html('<%= video_tag("#{@test_name}"+"1.mp4",controls: true, autobuffer: true,autoplay:true) %>');
+			else if(cur_part==1)
+				$(".conquest-video div").html('<%= video_tag("#{@test_name}"+"2.mp4",controls: true, autobuffer: true,autoplay:true) %>');
+			else if(cur_part == 2)
+				$(".conquest-video div").html('<%= video_tag("#{@test_name}"+"3.mp4",controls: true, autobuffer: true,autoplay:true) %>');
 			cur_ques = 0;
 		} 
 		cur_select = '0';
@@ -150,11 +160,11 @@
 	}
 	function updateView(type){
 		if(exp_point<3)
-			$(".conquest-img").html('<%= image_tag "ninja.png" , :class => "conquest-img-ninja" %>');
+			$(".conquest-level-img").html('<%= image_tag @test_name+"0.png" , :class => "conquest-img-ninja" %>');
 		else if(exp_point>=3 && exp_point<6)
-			$(".conquest-img").html('<%= image_tag "ninja2.png" , :class => "conquest-img-ninja" %>');
+			$(".conquest-level-img").html('<%= image_tag @test_name+"1.png" , :class => "conquest-img-ninja" %>');
 		else if(exp_point>=6)
-			$(".conquest-img").html('<%= image_tag "ninja3.png" , :class => "conquest-img-ninja" %>');
+			$(".conquest-level-img").html('<%= image_tag @test_name+"2.png" , :class => "conquest-img-ninja" %>');
 		$("#level").html("Level: "+ Math.floor(exp_point/3)+"/3");
 		$("#exp_point").html("Exp Points: "+exp_point);
 		$("#point1").html(point1+"/3");
@@ -167,6 +177,7 @@
 			checkEle += '<%= image_tag "checked.png" , :class => "conquest-img-check" %>';
 		}
 		$(".conquest-check").html(checkEle); 
+
 		if(type==0)
 			return;
 		$("#question").html((cur_ques+1)+'. '+data[cur_part * 3 + cur_ques].question);
@@ -184,6 +195,23 @@
 		{
 			$("#option"+param).addClass("conquest-green-btn");
 			exp_point ++;
+
+			if(exp_point%3 == 0){
+				$(".conquest-level-img").css('display','none');
+				$(".conquest-img-dollar").css('display','block');
+				setTimeout(function(){
+					$(".conquest-img-dollar").css('display','none');
+					$(".conquest-level-img").css('display','block');
+				},500);
+			} else {
+				$(".conquest-level-img").css('display','none');
+				$(".conquest-img-dollar").css('display','block');
+				setTimeout(function(){
+					$(".conquest-img-dollar").css('display','none');
+					$(".conquest-level-img").css('display','block');
+				},500);
+			}
+
 			if(cur_part == 0)
 				point1++;
 			else if(cur_part == 1)

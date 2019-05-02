@@ -76,16 +76,16 @@ class ConquestController < ApplicationController
 
 	def result
 		@exp_point = session[:exp_point];
-		name = session[:test_name];
-		if(name == "income")
+		@test_name = session[:test_name];
+		if(@test_name == "income")
 			@conquest_title = "THE INCOME STATEMENT"
-		elsif (name == "asset")
+		elsif (@test_name == "asset")
 			@conquest_title = "ASSETS"
-		elsif (name == "liability")
+		elsif (@test_name == "liability")
 			@conquest_title = "LIABILITY"
-		elsif (name == "equity")
+		elsif (@test_name == "equity")
 			@conquest_title = "OWNERS` EQUITY"
-		elsif (name == "credit")
+		elsif (@test_name == "credit")
 			@conquest_title = "DEBITS AND CREDITS"
 		end
 		render 'result'

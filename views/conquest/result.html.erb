@@ -6,11 +6,11 @@
 		<div class="result-content">
 			<div class="result-img">
 				<% if @exp_point<3 %>
-					<%= image_tag "ninja.png" %>
+					<%= image_tag @test_name+"0.png" %>
 				<% elsif @exp_point>=3 and @exp_point<6 %>
-					<%= image_tag "ninja2.png"%>
+					<%= image_tag @test_name+"1.png" %>
 				<% elsif @exp_point>=6 %>
-					<%= image_tag "ninja3.png" %>
+					<%= image_tag @test_name+"2.png" %>
 				<% end %>
 			</div>
 			<div class="result-percent">

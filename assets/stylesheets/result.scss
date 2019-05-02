@@ -9,9 +9,12 @@
 }
 .result-img {
 	display: inline-block;
+	width:300px;
 }
 .result-img > img {
 	display: block;
+	height: 250px;
+	margin: 0 auto;
 }
 .result-percent {
 	font-family: "Segoe Print";

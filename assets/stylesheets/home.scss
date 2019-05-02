@@ -8,59 +8,48 @@
 	src: font-url('segoe_print.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Balonku Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: font-url('Balonku-Regular.otf') format('opentype');
+}
+
 .home-container {
 	
 }
 .home-title {
-	padding-top: 100px;
+	padding-top: 50px;
 	max-width: 1200px;
 	text-align: center;
 	margin: 0 auto;	
 }
 .home-title-text {
-	font-family: "Segoe Print";
-	font-size: 160px;
+	font-family: "Balonku Regular";
+	font-size: 140px;
 	color: black;
-	word-break: break-all;
+    line-height: 130px;
 }
-.home-img-first {
-	display: none;
+.home-img-landing {
+    width: 500px;
+    margin-bottom:30px;
 }
-.home-img-second {
-	display: inline-block;
-	margin-top: -150px;
-    margin-left: 100px;
-    width: 200px;
-}
-.home-title-account {
 
-}
-.home-title-conquest {
-	display: inline-block;
-}
 
 @media (max-width: 1200px){
 	.home-title-text {
-		font-size: 13.33vw;
+		font-size: 11vw;
 	}
-	.home-img-second {
-		width: 16.66vw;
-		margin-top: -12.5vw;
-		margin-right: 8.33vw;
-		margin-right: 0px;
+	.home-img-landing {
+		width: 41.66vw;
 	}
 }
 @media (max-width: 760px){
 	.home-title-text {
 		font-size: 13.33vw;
+		line-height: 13.33vw;
 	}
-	.home-img-second {
-		display: none;;
-	}
-	.home-img-first {
-		display: block;
-		margin: 0 auto;
-	}
+
 }
 
 
@@ -117,4 +106,19 @@
 		font-size: 5vw;
 		display: inline-block;
 	}
+}
+
+.landing-video {
+	display: none;
+	width: 100%;
+	margin: 0 auto;
+	background-color: rgba(10,10,10,0.9);
+    position: fixed;
+    top: 0px;
+    height: 100%;
+}
+.landing-video video {
+	margin: 20vh auto;
+	width: 700px;
+	display: block;
 }
