@@ -1,6 +1,6 @@
 .result-body {
 	max-width: 950px;
-	padding-top: 150px;
+	padding-top: 100px;
 	margin: 0 auto;
 }
 .result-content {
@@ -13,7 +13,7 @@
 }
 .result-img > img {
 	display: block;
-	height: 250px;
+	height: 300px;
 	margin: 0 auto;
 }
 .result-percent {
@@ -31,16 +31,19 @@
 	line-height: 100%;
 }
 .result-point {
-
+	font-family: "Kashima";
 }
 .result-point > p {
-	font-size: 20px;
+	font-size: 25px;
 	margin: 0;
 }
 .result-point > h1 {
-	font-size: 20px;
+	font-size: 25px;
 	margin: 0;
 	color: rgb(0,176,80);
+}
+.btn-audioplay{
+	display: none;
 }
 .result-btn-next {
 	width: 100%;

@@ -6,14 +6,12 @@
 	color: black;
 }
 .conquest-header {
-	background-color: black;
 	text-align: center;
-	padding: 10px;
+	padding-top: 20px;
 }
 .conquest-header-text {
 	font-size: 80px;
 	font-family: "Balonku Regular";
-	color: white;
 }
 .conquest-body {
 	max-width: 1200px;
@@ -23,25 +21,16 @@
 .conquest-content {
 }
 .conquest-video {
-	border-left: 1px solid black;
-	border-top: 1px solid black;
 	height: 350px;
-	background-image: url('back.png');
-	background-repeat: round;
+	padding: 10px;
+/*	background-image: url('back.png');
+	background-repeat: round;*/
 }
-.conquest-video div {
-	background-color: black;
-    margin-top: 35px;
-    margin-left: 50px;
-    width: 580px;
-    height: 280px;
-    border-radius: 15px;
-    border: 2px solid black;
-    overflow: hidden;
-}
-.conquest-video div video {
+
+.conquest-video video {
 	width: 100%;
     height: 100%;
+    background-color: black;
 }
 .conquest-img-play {
 	display: block;
@@ -52,10 +41,9 @@
 
 }
 .conquest-part {
-	border: 1px solid black;
-	border-bottom: none;
 	height: 350px;
 	padding-top: 20px;
+	font-family: "Kashima";
 }
 .conquest-part > div{
 	text-align: center;
@@ -74,23 +62,28 @@
     margin-top: 30px;
 }
 .conquest-img {
-	border: 1px solid black;
 	height: 300px;
+	padding: 0px;
 }
 .conquest-img-ninja {
 	display: block;
     margin: 0 auto;
-    height: 250px;
-    margin-top: 25px;
+    height: 300px;
 }
-.conquest-img-dollar {
+.conquest-img-correct {
 	display:none;
     margin: 0 auto;
+    height: 120px;
+    margin-top: 100px;
+}
+.conquest-img-wrong {
+	display:none;
+    margin: 0 auto;
+    height: 120px;
     margin-top: 100px;
 }
 .conquest-question {
 	border: 1px solid black;
-	border-left: none;
 	height: 300px;
 	padding: 30px;
 }
@@ -120,24 +113,21 @@
 	background-color: rgb(255,0,0);
 }
 .conquest-point {
-	border: 1px solid black;
-	border-top: none;
 	height: 100px;
 	padding-top: 5px;
+	font-family: "Kashima";
 }
 .conquest-point > p {
-	font-size: 19px;
+	font-size: 21px;
 	margin: 0;
 }
 .conquest-point > h1 {
-	font-size: 18px;
+	font-size: 20px;
 	margin: 0;
 	margin-top: 5px;
 	color: rgb(0,176,80);
 }
 .conquest-answer {
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
 	height: 100px;
 	font-size:15px;
 }
@@ -161,21 +151,13 @@
 	.conquest-header-text {
 		font-size: 7vw;
 	}
-	.conquest-video {
-		border: 1px solid black;
-	}
+	
 	.conquest-part {
-		border: none;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
 		text-align: center;
 		height: auto;
 		padding: 10px 10px;
 	}
-	.conquest-check {
-		border: 1px solid black;
-		border-bottom: none;
-	}
+	
 	.conquest-part > div{
 		text-align: center;
 		margin-bottom: 30px;
@@ -196,14 +178,9 @@
 	    margin: 0 15px 0 15px;
 	}
 	.conquest-question {
-		border: 1px solid black;
-		border-top: none;
 		height: unset;
 	}
-	.conquest-answer {
-		border: 1px solid black;
-		border-top: none;
-	}
+	
 	.conquest-img-ninja {
 
 	}
@@ -216,26 +193,11 @@
 	.conquest-header-text {
 		font-size: 49px;
 	}
-	.conquest-video {
-		border: 1px solid black;
-	}
-	.conquest-part {
-		border: none;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
-	}
-	.conquest-check {
-		border-right: 1px solid black;
-	}
+
 	.conquest-question {
-		border: 1px solid black;
-		border-top: none;
 		height: unset;
 	}
-	.conquest-answer {
-		border: 1px solid black;
-		border-top: none;
-	}
+
 	.conquest-video div {
 	    margin-left: 3.8vw;
 	    width: 63vw;
@@ -244,14 +206,6 @@
 @media (max-width: 991px) and (min-width: 768px){
 	.conquest-header-text {
 		font-size: 65px;
-	}
-	.conquest-question {
-		border: 1px solid black;
-		border-top: none;
-	}
-	.conquest-answer {
-		border: 1px solid black;
-		border-top: none;
 	}
 	.conquest-video div {
 	    margin-left: 2vw;
