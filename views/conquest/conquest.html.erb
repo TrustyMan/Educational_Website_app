@@ -4,11 +4,11 @@
 		<p class="conquest-header-text">Accounting Conquest</p>
 	</div>
 	<div class="conquest-body">
-		<div class="conquest-content row">
-			<div class="conquest-video col-lg-9 col-md-6 col-sm-12">
-				<%= video_tag("#{@test_name}"+"#{(@cur_part+1)}"+".mp4",controls: true, autobuffer: true,autoplay:true) %>
+		<div class="conquest-content conquest-video-check">
+			<div class="conquest-video">
+				<iframe src="https://cdn.jwplayer.com/players/oOR6NJwe-BGOAXuhU.html" width="100%" height="100%" frameborder="0" scrolling="auto" allowfullscreen></iframe>
 			</div>
-			<div class="conquest-part-check col-lg-3 col-md-6 col-sm-12">
+			<div class="conquest-part-check">
 				<div class="row">
 					<div class="conquest-part col-lg-7 col-md-7 col-sm-6">
 						<div>
@@ -75,7 +75,8 @@
 <script type="text/javascript">
 	
 	var cur_select,cur_part,cur_ques,exp_point,point1,point2,point3,data,test_name, cur_level;
-	
+	var soundplay = false;
+	var video_urls = { "income":["https://cdn.jwplayer.com/players/Xo0Scs73-BGOAXuhU.html","https://cdn.jwplayer.com/players/CB2hTUxy-BGOAXuhU.html","https://cdn.jwplayer.com/players/CLkpZAA5-BGOAXuhU.html"], "asset": ["https://cdn.jwplayer.com/players/Pvm6fTi8-BGOAXuhU.html","https://cdn.jwplayer.com/players/WsD9aeHs-BGOAXuhU.html","https://cdn.jwplayer.com/players/Ybtl16nH-BGOAXuhU.html"],"liability":["https://cdn.jwplayer.com/players/bgcLhtIp-BGOAXuhU.html","https://cdn.jwplayer.com/players/YNZHoY6e-BGOAXuhU.html","https://cdn.jwplayer.com/players/x2I6krkd-BGOAXuhU.html"],"equity":["https://cdn.jwplayer.com/players/EMmv3wtc-BGOAXuhU.html","https://cdn.jwplayer.com/players/aspZhaWh-BGOAXuhU.html","https://cdn.jwplayer.com/players/cNyQc0Fv-BGOAXuhU.html"],"credit":["https://cdn.jwplayer.com/players/vZoTkwrQ-BGOAXuhU.html","https://cdn.jwplayer.com/players/waFEsJYH-BGOAXuhU.html","https://cdn.jwplayer.com/players/oRZzt4u6-BGOAXuhU.html"]};
 	$(document).ready(function(){
 		
 	});
@@ -90,6 +91,8 @@
 		point1 = <%= @point1 %>;
 		point2 = <%= @point2 %>;
 		point3 = <%= @point3 %>;
+		$(".conquest-video iframe").attr('src',video_urls[test_name][cur_part]);
+		console.log(video_urls[test_name][cur_part]);
 		$.ajax({
 			type: "POST",
 			url: "./get_data",
@@ -111,18 +114,13 @@
 	}		
 	
 	$(".conquest-img-next").click(function(){
-		if(cur_select == '0')
+		if(cur_select == '0' || soundplay == true)
 			return;
 		$("#correctAnswer").html("");
 		cur_ques++;
 		if(cur_ques == 3){
 			cur_part ++;
-			if(cur_part==0)
-				$(".conquest-video div").html('<%= video_tag("#{@test_name}"+"1.mp4",controls: true, autobuffer: true,autoplay:true) %>');
-			else if(cur_part==1)
-				$(".conquest-video div").html('<%= video_tag("#{@test_name}"+"2.mp4",controls: true, autobuffer: true,autoplay:true) %>');
-			else if(cur_part == 2)
-				$(".conquest-video div").html('<%= video_tag("#{@test_name}"+"3.mp4",controls: true, autobuffer: true,autoplay:true) %>');
+			$(".conquest-video iframe").attr('src',video_urls[test_name][cur_part]);
 			cur_ques = 0;
 		} 
 		cur_select = '0';
@@ -188,6 +186,7 @@
 		if(cur_select != '0')
 			return;
 		var correctOption = data[cur_part*3+cur_ques].correctOption;
+		soundplay = true;
 		if(param == correctOption)
 		{
 			$("#option"+param).addClass("conquest-green-btn");
@@ -200,6 +199,7 @@
 				setTimeout(function(){
 					$(".conquest-img-correct").css('display','none');
 					$(".conquest-level-img").css('display','block');
+					soundplay = false;
 				},1000);
 			} else {
 				$(".conquest-level-img").css('display','none');
@@ -207,6 +207,7 @@
 				setTimeout(function(){
 					$(".conquest-img-correct").css('display','none');
 					$(".conquest-level-img").css('display','block');
+					soundplay = false;
 				},1000);
 			}
 
@@ -225,6 +226,7 @@
 			setTimeout(function(){
 				$(".conquest-img-wrong").css('display','none');
 				$(".conquest-level-img").css('display','block');
+				soundplay = false;
 			},2000);
 		}
 		$("#correctAnswer").html(data[cur_part*3+cur_ques].answer);

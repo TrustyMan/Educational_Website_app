@@ -23,8 +23,15 @@
 	src: font-url('Kashima-Demo.otf') format('opentype');
 }
 
+body {
+
+}
 .home-container {
-	
+	background-image: url(background.png);
+	background-size: cover;
+	background-position: 50% 100%;
+	background-blend-mode: soft-light;
+	background-color: rgba(255,255,255,0.3);
 }
 .home-title {
 	padding-top: 50px;
@@ -127,8 +134,9 @@
     top: 0px;
     height: 100%;
 }
-.landing-video video {
-	margin: 20vh auto;
-	width: 700px;
-	display: block;
+.landing-video iframe {
+	margin: 30vh auto;
+    width: 700px;
+    height: 292px;
+    display: block;
 }

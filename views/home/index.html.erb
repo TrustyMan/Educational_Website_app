@@ -18,15 +18,14 @@
 	</div>
 </div>
 <div class="landing-video">
-	<%= video_tag("landing-video.mp4",controls: true, muted:true,autobuffer: true,id: "landingVideo") %>
+	<iframe src="https://cdn.jwplayer.com/players/oOR6NJwe-BGOAXuhU.html" width="100%" height="100%" frameborder="0" scrolling="auto" allowfullscreen></iframe>
 </div>
 
 <script type="text/javascript">
-	var vid = document.getElementById("landingVideo");
+	var vid = $("video")[0];
 	<% if(@videoViewed) %>
 		setTimeout(function(){
 			$(".landing-video").fadeIn(callback = function(){
-				vid.play();
 				$.ajax({
 					type: "POST",
 					url: "home/videoViewed"
@@ -34,12 +33,9 @@
 			});
 		},2000);
 	<% end %>
-	vid.onended = function(){
-		$(".landing-video").fadeOut();
-	};
 	$(".landing-video").click(function(){
-		vid.pause();
 		$(".landing-video").fadeOut();
+		$(".landing-video").html("");
 	});
 	$(".landing-video video").click(function(){
 		event.stopPropagation();

@@ -8,12 +8,12 @@
 				<%= image_tag @test_name+"#{@exp_point/3}"+".png"%>
 			</div>
 			<div class="result-percent">
-				<div>Total:</div>
+				<div>Total: </div>
 				<div><%= (@exp_point.to_f*100/9).round %>%</div>
 			</div>
 			<div class="result-point">
-				<p>Level:<%= @exp_point/3 %>/3</p>
-				<p>Exp Points:<%= @exp_point %></p>
+				<p>Level: <%= @exp_point/3 %>/3</p>
+				<p>Exp Points: <%= @exp_point %></p>
 				<h1><%= @conquest_title %></h1>
 			</div>
 		</div>
