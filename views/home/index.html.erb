@@ -22,6 +22,15 @@
 </div>
 
 <script type="text/javascript">
+	$(document).ready(function(){
+		if($(".home-container").height()>$("body").height())
+			$("body").height($(".home-container").height());
+		$(window).resize(function(){
+			$("body").css('height','100vh');
+			if($(".home-container").height()>$("body").height())
+				$("body").height($(".home-container").height());
+		});
+	});
 	var vid = $("video")[0];
 	<% if(@videoViewed) %>
 		setTimeout(function(){

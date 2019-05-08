@@ -24,14 +24,15 @@
 }
 
 body {
-
-}
-.home-container {
+	height: 100vh;
 	background-image: url(background.png);
 	background-size: cover;
 	background-position: 50% 100%;
 	background-blend-mode: soft-light;
 	background-color: rgba(255,255,255,0.3);
+}
+.home-container {
+	
 }
 .home-title {
 	padding-top: 50px;

@@ -78,7 +78,13 @@
 	var soundplay = false;
 	var video_urls = { "income":["https://cdn.jwplayer.com/players/Xo0Scs73-BGOAXuhU.html","https://cdn.jwplayer.com/players/CB2hTUxy-BGOAXuhU.html","https://cdn.jwplayer.com/players/CLkpZAA5-BGOAXuhU.html"], "asset": ["https://cdn.jwplayer.com/players/Pvm6fTi8-BGOAXuhU.html","https://cdn.jwplayer.com/players/WsD9aeHs-BGOAXuhU.html","https://cdn.jwplayer.com/players/Ybtl16nH-BGOAXuhU.html"],"liability":["https://cdn.jwplayer.com/players/bgcLhtIp-BGOAXuhU.html","https://cdn.jwplayer.com/players/YNZHoY6e-BGOAXuhU.html","https://cdn.jwplayer.com/players/x2I6krkd-BGOAXuhU.html"],"equity":["https://cdn.jwplayer.com/players/EMmv3wtc-BGOAXuhU.html","https://cdn.jwplayer.com/players/aspZhaWh-BGOAXuhU.html","https://cdn.jwplayer.com/players/cNyQc0Fv-BGOAXuhU.html"],"credit":["https://cdn.jwplayer.com/players/vZoTkwrQ-BGOAXuhU.html","https://cdn.jwplayer.com/players/waFEsJYH-BGOAXuhU.html","https://cdn.jwplayer.com/players/oRZzt4u6-BGOAXuhU.html"]};
 	$(document).ready(function(){
-		
+		if($(".conquest-container").height()>$("body").height())
+			$("body").height($(".conquest-container").height());
+		$(window).resize(function(){
+			$("body").css('height','100vh');
+			if($(".conquest-container").height()>$("body").height())
+				$("body").height($(".conquest-container").height());
+		});
 	});
 	initialize();
 	function initialize(){

@@ -32,6 +32,13 @@
 
 <script type="text/javascript">
 	$(document).ready(()=>{
+		if($(".conquest-container").height()>$("body").height())
+			$("body").height($(".conquest-container").height());
+		$(window).resize(function(){
+			$("body").css('height','100vh');
+			if($(".conquest-container").height()>$("body").height())
+				$("body").height($(".conquest-container").height());
+		});
 		setTimeout(()=>{
 			$(".btn-audioplay").click();
 		},300)
