@@ -15,11 +15,10 @@ body {
 }
 .conquest-header {
 	text-align: center;
-	padding-top: 20px;
+	padding-top: 30px;
 }
 .conquest-header-text {
-	font-size: 80px;
-	font-family: "Balonku Regular";
+	
 }
 .conquest-body {
 	max-width: 1200px;
@@ -173,7 +172,8 @@ body {
 }
 @media (max-width: 575px) {
 	.conquest-header-text {
-		font-size: 7vw;
+		width: 90vw;
+		padding: 15px 0;
 	}
 	.conquest-video-check {
 		display: block;
@@ -222,7 +222,8 @@ body {
 }
 @media (max-width: 767px) and (min-width: 576px){
 	.conquest-header-text {
-		font-size: 49px;
+		width: 90vw;
+		padding: 15px 0;
 	}
 
 	.conquest-question {
@@ -268,7 +269,8 @@ body {
 }
 @media (max-width: 991px) and (min-width: 768px){
 	.conquest-header-text {
-		font-size: 65px;
+		width: 750px;
+		padding: 10px 0;
 	}
 	.conquest-video div {
 	    margin-left: 2vw;
@@ -305,9 +307,7 @@ body {
 	}
 }
 @media (max-width: 1070px) and (min-width: 992px){
-	.conquest-header-text {
-		font-size: 75px;
-	}
+
 	.conquest-point > p{
 		font-size: 25px;
 		padding-bottom: 5px;

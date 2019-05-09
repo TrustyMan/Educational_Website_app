@@ -41,11 +41,7 @@ body {
 	margin: 0 auto;	
 }
 .home-title-text {
-	font-family: "Balonku Regular";
-    font-size: 100px;
-    color: black;
-    line-height: 110px;
-    margin-bottom: 0px;
+	
 }
 .home-img-landing {
     width: 600px;
@@ -53,20 +49,15 @@ body {
 }
 
 
-@media (max-width: 1200px){
-	.home-title-text {
-		font-size: 8.5vw;
-		line-height: 8.8vw;
-	}
+@media (max-width: 1000px){
 	.home-img-landing {
-		width: 41.66vw;
+		width: 60vw;
+	}
+	.home-title-text {
+		width: 74.8vw;
 	}
 }
 @media (max-width: 760px){
-	.home-title-text {
-		font-size: 9.2vw;
-		line-height: 9.3vw;
-	}
 
 }
 
