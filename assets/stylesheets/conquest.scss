@@ -1,7 +1,8 @@
 // Place all the styles related to the Conquest controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
+
+.conquest-result-body {
 	height: 100vh;
 	background-image: url(background.png);
 	background-size: cover;
@@ -11,7 +12,6 @@ body {
 }
 .conquest-container {
 	color: black;
-	background-blend-mode: soft-light;
 }
 .conquest-header {
 	text-align: center;
@@ -96,12 +96,13 @@ body {
     margin-top: 100px;
 }
 .conquest-question {
-	border: 1px solid black;
+	border: 2px solid black;
 	height: 300px;
 	padding: 30px;
 }
 .conquest-question > p {
 	font-size: 20px;
+	font-weight:650;
 }
 .conquest-question > div {
 	max-width: 670px;
@@ -113,7 +114,8 @@ body {
 	font-size: 13px;
 	text-align: center;
 	border-radius: 5px;
-	border: 1px solid black;
+	border: 2px solid black;
+	font-weight: 800;
 	background-color: transparent;
 	margin: 5px;
 	width:300px;
