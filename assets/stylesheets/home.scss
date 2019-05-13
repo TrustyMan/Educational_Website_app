@@ -96,27 +96,32 @@
 }
 .footer {
 	font-family: Balonku Regular;
-	padding-top: 70px;
+	padding-top: 40px;
 	text-align: center;
 	font-weight: bold;
 	font-size: 38px;
-	padding-bottom:70px;
+	padding-bottom:40px;
 }
 .home-img-creater {
-
+	width: 780px;
 }
 .footer > p {
 	font-size: 22px;
-	color: #c3bfbf;
-	margin-top: 40px;
+	color: #bbb7b7;
+	margin-top: 20px;
 	font-family: Arial;
 	display: block;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 900px) {
 	.home-img-creater {
-		width: 95vw;
+		width: 86.7vw;
 	}	
+}
+@media (max-width: 600px) {
+	.footer > p {
+		font-size: 3.7vw;
+	}
 }
 
 @media (max-width: 350px) {
