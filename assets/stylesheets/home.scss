@@ -66,6 +66,8 @@
 .btn-home {
 	color: white;
 	border-radius: 5px;
+	font-size: 20px;
+	font-weight: bold;
 	border: none;
 	width: 300px;
 	height: 50px;
@@ -93,9 +95,11 @@
 	background-color: #00b0f0;
 }
 .footer {
+	font-family: Balonku Regular;
 	padding-top: 70px;
 	text-align: center;
 	font-weight: bold;
+	font-size: 38px;
 	padding-bottom:70px;
 }
 .footer > a {
@@ -104,8 +108,14 @@
 	display: inline;
 }
 
-.footer > p {
+.footer > p:first-child {
+	color: white;
 	display: inline;
+}
+
+.footer > p:last-child {
+	color: white;
+	display: block;
 }
 
 @media (max-width: 350px) {
@@ -114,6 +124,12 @@
 		height: 20vw;
 		font-size: 5vw;
 		display: inline-block;
+	}
+}
+
+@media (max-width: 833px) {
+	.footer {
+		font-size: 4.3vw;
 	}
 }
 

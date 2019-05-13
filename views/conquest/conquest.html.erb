@@ -198,6 +198,7 @@
 			$("#option"+param).addClass("conquest-green-btn");
 			exp_point ++;
 
+			$(".audio-correct")[0].volume = 0.7;
 			$(".audio-correct")[0].play();
 			if(exp_point%3 == 0){
 				$(".conquest-level-img").css('display','none');

@@ -54,15 +54,15 @@
 }
 .conquest-part {
 	height: 350px;
-	padding-top: 20px;
+	padding-top: 30px;
 	font-family: "Kashima";
 }
 .conquest-part > div{
 	text-align: center;
-	margin-bottom: 30px;
+
 }
 .conquest-part > div > p{
-	font-size: 30px;
+	font-size: 36px;
 	margin: 0px;
 }
 
@@ -97,6 +97,7 @@
 }
 .conquest-question {
 	border: 2px solid black;
+	background-color: rgba(255,255,255,0.6);;
 	height: 300px;
 	padding: 30px;
 }
@@ -111,14 +112,14 @@
 	text-align: center;
 }
 .conquest-question > div > button {
-	font-size: 13px;
+	font-size: 14px;
 	text-align: center;
 	border-radius: 5px;
 	border: 2px solid black;
 	font-weight: 800;
 	background-color: transparent;
 	margin: 5px;
-	width:300px;
+	width:320px;
 	height:40px;
 }
 .conquest-question > div > .conquest-green-btn {
@@ -133,7 +134,7 @@
 	font-family: "Kashima";
 }
 .conquest-point > p {
-	font-size: 30px;
+	font-size: 36px;
 	margin: 0;
 	line-height: 30px;
 }
@@ -142,7 +143,7 @@
 	margin: 0;
 	color: rgb(0,176,80);
 	line-height: 30px;
-    padding: 0px;
+    padding-top: 5px;
 }
 .conquest-answer {
 	height: 100px;
@@ -269,7 +270,7 @@
 	    margin: 15px 15px 0 15px;
 	}
 }
-@media (max-width: 991px) and (min-width: 768px){
+@media (max-width: 996px) and (min-width: 768px){
 	.conquest-header-text {
 		width: 750px;
 		padding: 10px 0;
@@ -278,6 +279,9 @@
 	    margin-left: 2vw;
 	    width: 32vw;
 	}
+	.conquest-question {
+		height: unset;
+	}
 	.conquest-video-check {
 		display: block;
 	}
@@ -308,10 +312,10 @@
 	    margin: 15px 15px 0 15px;
 	}
 }
-@media (max-width: 1070px) and (min-width: 992px){
+@media (max-width: 1070px) and (min-width: 997px){
 
 	.conquest-point > p{
-		font-size: 25px;
+		font-size: 30px;
 		padding-bottom: 5px;
 	}
 	.conquest-point > h1{
@@ -348,7 +352,7 @@
 	    margin: 15px 15px 0 15px;
 	}
 }
-@media (max-width: 1220px) and (min-width: 992px){
+@media (max-width: 1220px) and (min-width: 1071px){
 
 	.conquest-video-check {
 		display: block;
@@ -357,11 +361,11 @@
 		margin: 0 auto;
 	}
 	.conquest-point > p{
-		font-size: 25px;
+		font-size: 32px;
 		padding-bottom: 5px;
 	}
 	.conquest-point > h1{
-		font-size: 25px;
+		font-size: 28px;
 	}
 	.conquest-part-check {
 		width: 100%;

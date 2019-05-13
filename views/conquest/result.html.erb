@@ -1,4 +1,4 @@
-<div class="conquest-body">
+<div class="conquest-result-body">
 	<div class="conquest-container">
 		<div class="conquest-header">
 			<%= image_tag "header-title.png" , :class => "conquest-header-text" %>	
@@ -19,7 +19,7 @@
 				</div>
 			</div>
 			<bgsound src = "/assets/over.wav"/>
-			<% if (@exp_point.to_f*100/9).round >= 50 %>
+			<% if (@exp_point.to_f*100/9).round >= 70 %>
 				<%= audio_tag "over.wav", :class => "audio-play" %>
 			<% else %>
 				<%= audio_tag "under.wav", :class => "audio-play" %>
