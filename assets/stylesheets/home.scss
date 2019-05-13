@@ -102,20 +102,21 @@
 	font-size: 38px;
 	padding-bottom:70px;
 }
-.footer > a {
-	color:blue;
-	text-decoration: underline;
-	display: inline;
-}
+.home-img-creater {
 
-.footer > p:first-child {
-	color: white;
-	display: inline;
 }
-
-.footer > p:last-child {
-	color: white;
+.footer > p {
+	font-size: 22px;
+	color: #c3bfbf;
+	margin-top: 40px;
+	font-family: Arial;
 	display: block;
+}
+
+@media (max-width: 1500px) {
+	.home-img-creater {
+		width: 95vw;
+	}	
 }
 
 @media (max-width: 350px) {
@@ -126,6 +127,7 @@
 		display: inline-block;
 	}
 }
+
 
 @media (max-width: 833px) {
 	.footer {
